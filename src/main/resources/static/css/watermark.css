@@ -1,0 +1,13 @@
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+.stamp{
+    width: 645px;
+    height: 240px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    -webkit-transform: rotate(-15deg);
+    background: url("../image/mark.jpg") no-repeat 100% 100%;
+}

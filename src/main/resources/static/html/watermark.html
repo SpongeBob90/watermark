@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/watermark.js"></script>
+    <link rel="stylesheet" href="../css/watermark.css"/>
+</head>
+<body>
+    <div class="stamp"></div>
+</body>
+</html>
+<script>
+    // 转码
+    function decToHex(str) {
+        var res=[];
+        for(var i=0;i < str.length;i++)
+            res[i]=("00"+str.charCodeAt(i).toString(16)).slice(-4);
+        return "\\u"+res.join("\\u");
+    }
+    //添加页面水印效果
+    $("body").watermark(decToHex("水印"),{
+        color:"#000000",     	// 颜色
+        angle:45,         	    // 水印倾斜角度
+        fontSize:20,       		// 水印字号大小
+        fontFamily:"arial", 	// 水印字体
+        opacity:0.16, 			// 0~1 越大越透明度深
+        horizontalMargin:95,   // 横向间距
+        verticalMargin:80      // 纵向间距
+    });
+</script>
